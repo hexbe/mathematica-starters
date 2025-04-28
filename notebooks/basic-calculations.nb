@@ -1,0 +1,92 @@
+NotebookWrite[
+  EvaluationNotebook[], 
+  Cell["Basic Calculations", "Title"]
+];
+
+NotebookWrite[
+  EvaluationNotebook[], 
+  Cell["A collection of simple Mathematica computations.", "Text"]
+];
+
+NotebookWrite[
+  EvaluationNotebook[], 
+  Cell["Arithmetic", "Section"]
+];
+
+NotebookWrite[
+  EvaluationNotebook[], 
+  Cell[
+    BoxData@ToBoxes@Grid[
+      {
+        {"Addition", 2 + 3},
+        {"Subtraction", 10 - 4},
+        {"Multiplication", 6 * 7},
+        {"Division", 22 / 7},
+        {"Exponentiation", 5^3}
+      },
+      Frame -> All
+    ],
+    "Input"
+  ]
+];
+
+NotebookWrite[
+  EvaluationNotebook[], 
+  Cell["Algebra", "Section"]
+];
+
+NotebookWrite[
+  EvaluationNotebook[], 
+  Cell[
+    BoxData@ToBoxes@Grid[
+      {
+        {"Solve Linear Equation", Solve[3 x + 7 == 0, x]},
+        {"Expand Polynomial", Expand[(x + 1)^3]},
+        {"Factor Polynomial", Factor[x^2 - 5 x + 6]},
+        {"Simplify Expression", Simplify[(x^2 - 1)/(x - 1)]}
+      },
+      Frame -> All
+    ],
+    "Input"
+  ]
+];
+
+NotebookWrite[
+  EvaluationNotebook[], 
+  Cell["Calculus", "Section"]
+];
+
+NotebookWrite[
+  EvaluationNotebook[], 
+  Cell[
+    BoxData@ToBoxes@Grid[
+      {
+        {"Derivative", D[Sin[x], x]},
+        {"Integral", Integrate[x^2, x]},
+        {"Limit", Limit[Sin[x]/x, x -> 0]},
+        {"Series Expansion", Series[Exp[x], {x, 0, 5}]}
+      },
+      Frame -> All
+    ],
+    "Input"
+  ]
+];
+
+NotebookWrite[
+  EvaluationNotebook[], 
+  Cell["Linear Algebra", "Section"]
+];
+
+NotebookWrite[
+  EvaluationNotebook[], 
+  Cell[
+    BoxData@ToBoxes@Grid[
+      {
+        {"Matrix Multiplication", {{1, 2}, {3, 4}}.{{5}, {6}}},
+        {"Matrix Inverse", Inverse[{{1, 2}, {3, 4}}]}
+      },
+      Frame -> All
+    ],
+    "Input"
+  ]
+];
