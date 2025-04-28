@@ -15,4 +15,4 @@ Perfect for learning, experimenting, and building larger projects!
 ## How to Use
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/Mathematica-Starters.git
+   git clone https://github.com/hexbe/mathematica-starters.git
