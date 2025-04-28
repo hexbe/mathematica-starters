@@ -1,3 +1,7 @@
+## 🚧 Work in Progress (WIP) 🚧
+
+This repository/discussion is currently a **Work in Progress**. The content is being actively developed and might be incomplete or subject to change.
+
 # Mathematica Starters 🚀
 
 This repository contains a collection of Mathematica / Wolfram Language starter projects, examples, and utilities.  
