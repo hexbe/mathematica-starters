@@ -1,0 +1,93 @@
+(* Title *)
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell["Neural Network Demo", "Title"]
+];
+
+(* Subtitle / Short description *)
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell["Just messing around with building and training simple neural nets in Wolfram Language.", "Text"]
+];
+
+(* Section: Build a Simple Neural Network *)
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell["Building a Simple Neural Network", "Section"]
+];
+
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell[
+    BoxData@ToBoxes[
+      simpleNet = NetChain[{
+        LinearLayer[10],
+        Tanh,
+        LinearLayer[1]
+      },
+      "Input" -> 2
+      ]
+    ],
+    "Input"
+  ]
+];
+
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell[
+    "This is a basic network: 2 inputs -> 10 hidden neurons -> 1 output. Activation is just Tanh.", "Text"
+  ]
+];
+
+(* Section: Training the Network *)
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell["Training on Dummy Data", "Section"]
+];
+
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell[
+    BoxData@ToBoxes[
+      Module[{data},
+        data = Table[
+          {{x, y}, x^2 + y^2},
+          {x, -1, 1, 0.1},
+          {y, -1, 1, 0.1}
+        ];
+        trainedNet = NetTrain[simpleNet, data]
+      ]
+    ],
+    "Input"
+  ]
+];
+
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell[
+    "Training it on (x^2 + y^2) values, just to see if it can learn simple patterns.", "Text"
+  ]
+];
+
+(* Section: Testing the Network *)
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell["Testing the Network", "Section"]
+];
+
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell[
+    BoxData@ToBoxes[
+      trainedNet[{0.5, 0.5}]
+    ],
+    "Input"
+  ]
+];
+
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell[
+    "Trying it on new inputs to see how good the predictions are.", "Text"
+  ]
+];

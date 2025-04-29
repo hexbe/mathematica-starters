@@ -1,0 +1,29 @@
+(* 2D Plot of a function *)
+Plot[Sin[x], {x, 0, 2 Pi}, PlotLabel -> "Plot of Sin[x]", AxesLabel -> {"x", "Sin[x]"}]
+
+(* Multiple plots on the same graph *)
+Plot[{Sin[x], Cos[x]}, {x, 0, 2 Pi}, PlotLegends -> "Expressions"]
+
+(* Parametric plot *)
+ParametricPlot[{Cos[t], Sin[t]}, {t, 0, 2 Pi}, PlotLabel -> "Unit Circle"]
+
+(* 3D plot of a function *)
+Plot3D[Sin[x y], {x, -3, 3}, {y, -3, 3}, PlotLabel -> "3D Plot of Sin[x y]"]
+
+(* Contour plot *)
+ContourPlot[Sin[x] + Cos[y] == 0, {x, -3, 3}, {y, -3, 3}, ContourStyle -> Red]
+
+(* Surface and color function example *)
+Plot3D[Sin[x^2 + y^2], {x, -2, 2}, {y, -2, 2}, ColorFunction -> "Rainbow"]
+
+(* Polar plot *)
+PolarPlot[1 + Sin[3 θ], {θ, 0, 2 Pi}, PlotLabel -> "Polar Plot"]
+
+(* List plot for given data points *)
+ListPlot[Table[{x, Sin[x]}, {x, 0, 6, 0.5}], Joined -> True, PlotMarkers -> Automatic]
+
+(* Vector field plot *)
+VectorPlot[{y, -x}, {x, -2, 2}, {y, -2, 2}, VectorStyle -> "Arrow3D"]
+
+(* Density plot *)
+DensityPlot[Sin[x] Cos[y], {x, -Pi, Pi}, {y, -Pi, Pi}, ColorFunction -> "SunsetColors"]

@@ -1,0 +1,71 @@
+(* Title *)
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell["Physics Sim Demo", "Title"]
+];
+
+(* Short description *)
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell["Messing around with simple physics — motion under gravity, bouncing, basic stuff.", "Text"]
+];
+
+(* Section: Setup parameters *)
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell["Setup", "Section"]
+];
+
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell[
+    BoxData@ToBoxes[
+      Module[{
+        g = 9.8, (* gravity *)
+        restitution = 0.8, (* bounce loss *)
+        tmax = 5, (* simulation time *)
+        dt = 0.01, (* time step *)
+        pos = 5, (* initial position *)
+        vel = 0, (* initial velocity *)
+        history = {}
+      },
+        Do[
+          vel = vel - g dt;
+          pos = pos + vel dt;
+          If[pos < 0,
+            pos = 0;
+            vel = -vel * restitution;
+          ];
+          AppendTo[history, pos],
+          {t, 0, tmax, dt}
+        ];
+        ListLinePlot[history, PlotRange -> {0, Automatic},
+          AxesLabel -> {"Time Steps", "Height"},
+          PlotLabel -> "Bouncing Ball Simulation"
+        ]
+      ]
+    ],
+    "Input"
+  ]
+];
+
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell[
+    "Basic 1D physics sim: a ball starts at height 5, falls under gravity, and bounces with energy loss.", "Text"
+  ]
+];
+
+(* Section: Ideas for later *)
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell["Ideas for Later", "Section"]
+];
+
+NotebookWrite[
+  EvaluationNotebook[],
+  Cell[
+    "- Add air resistance\n- Multiple balls\n- 2D or 3D motion\n- Collisions between objects\n- Rotational dynamics",
+    "Item"
+  ]
+];

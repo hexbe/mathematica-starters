@@ -1,0 +1,58 @@
+(* Title *)
+NotebookWrite[EvaluationNotebook[], Cell["Mandelbrot Set Demo", "Title"]];
+
+(* Description *)
+NotebookWrite[EvaluationNotebook[], Cell[
+  "Just a fun little experiment to generate and explore the Mandelbrot set using Wolfram Language.",
+  "Text"
+]];
+
+(* Section: Basic Mandelbrot Plot *)
+NotebookWrite[EvaluationNotebook[], Cell["Basic Mandelbrot Set", "Section"]];
+
+NotebookWrite[EvaluationNotebook[], Cell[
+  BoxData@ToBoxes[
+    MandelbrotSetPlot[
+      PlotRange -> {{-2.5, 1}, {-1.5, 1.5}},
+      MaxIterations -> 100,
+      ColorFunction -> "LakeColors"
+    ]
+  ],
+  "Input"
+]];
+
+NotebookWrite[EvaluationNotebook[], Cell[
+  "This uses `MandelbrotSetPlot` with some nice colors. Default range shows the full set.",
+  "Text"
+]];
+
+(* Section: Zoomed Region *)
+NotebookWrite[EvaluationNotebook[], Cell["Zoomed In", "Section"]];
+
+NotebookWrite[EvaluationNotebook[], Cell[
+  BoxData@ToBoxes[
+    MandelbrotSetPlot[
+      PlotRange -> {{-0.75, -0.7}, {0.05, 0.1}},
+      MaxIterations -> 200,
+      ColorFunction -> "SunsetColors"
+    ]
+  ],
+  "Input"
+]];
+
+NotebookWrite[EvaluationNotebook[], Cell[
+  "Zoomed into one of the more intricate parts of the set. The deeper you go, the more detail you see.",
+  "Text"
+]];
+
+(* Section: Expansion Ideas *)
+NotebookWrite[EvaluationNotebook[], Cell["Ideas for Later", "Section"]];
+
+NotebookWrite[EvaluationNotebook[], Cell[
+  "- Add interactive zoom with `Manipulate`\n\
+- Create custom coloring based on escape time\n\
+- Generate Julia sets using similar logic\n\
+- Animate zooming into Mandelbrot\n\
+- Use `Compile` for faster pixel-based generation",
+  "Item"
+]];

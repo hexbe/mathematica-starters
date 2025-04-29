@@ -1,0 +1,55 @@
+(* Load a sample image *)
+img = ExampleData[{"TestImage", "Lena"}];
+
+(* Display the original image *)
+img
+
+(* Convert to Grayscale *)
+gray = ColorConvert[img, "Grayscale"];
+gray
+
+(* Edge Detection *)
+edges = EdgeDetect[gray];
+edges
+
+(* Blur the Image *)
+blurred = GaussianFilter[img, 5];
+blurred
+
+(* Sharpen the Image *)
+sharpened = Sharpen[img, 2];
+sharpened
+
+(* Binarize (Threshold) the Image *)
+binary = Binarize[gray, 0.5];
+binary
+
+(* Morphological Operations *)
+dilated = Dilation[binary, DiskMatrix[3]];
+eroded = Erosion[binary, DiskMatrix[3]];
+
+(* Show dilated and eroded images side by side *)
+Row[{dilated, eroded}]
+
+(* Image Histogram *)
+ImageHistogram[gray]
+
+(* Resize the Image *)
+small = ImageResize[img, 100];
+small
+
+(* Rotate the Image *)
+rotated = ImageRotate[img, Pi/6];
+rotated
+
+(* Find Features *)
+features = ImageKeypoints[gray];
+ImageKeypointMarkers[gray, features]
+
+(* Color Negate *)
+negated = ColorNegate[img];
+negated
+
+(* Image Addition and Blending *)
+blend = ImageCompose[img, Style["Hello!", Bold, White, 40], {Scaled[{0.5, 0.5}]}];
+blend

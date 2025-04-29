@@ -1,0 +1,33 @@
+(* Symbolic Differentiation *)
+f[x_] := Sin[x^2]
+D[f[x], x]
+
+(* Symbolic Integration *)
+Integrate[Exp[-x^2], {x, -Infinity, Infinity}]
+
+(* Solving Equations Symbolically *)
+Solve[x^3 - 2 x + 1 == 0, x]
+
+(* Simplify an Expression *)
+Simplify[Sin[x]^2 + Cos[x]^2]
+
+(* Expand and Factor Polynomials *)
+Expand[(x + y)^5]
+Factor[x^4 - y^4]
+
+(* Series Expansion (Taylor Series) *)
+Series[Sin[x], {x, 0, 5}]
+
+(* Matrix Symbolic Computation *)
+A = {{a, b}, {c, d}};
+Inverse[A]
+
+(* Limit Calculations *)
+Limit[(Sin[x])/x, x -> 0]
+
+(* Symbolic Differentiation with Multiple Variables *)
+g[x_, y_] := x^2 + y^2
+D[g[x, y], {x, 2}, y]
+
+(* Define and Use Assumptions *)
+Assuming[x > 0, Simplify[Sqrt[x^2]]]
